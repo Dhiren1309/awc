@@ -1166,7 +1166,7 @@ document.querySelectorAll('.modal-bg').forEach(m=>{
 // ══════════════════════════════════════════
 // CALCULATOR
 // ══════════════════════════════════════════
-const KM = {copper:7.03,aluminium:2.70,ccs_nonmag:6.16,ccs_mag:4.50};
+const KM = {copper:7.04,aluminium:2.12,ccs_nonmag:6.28,ccs_mag:6.28};
 
 function onWireTypeChange(){
   const t = document.getElementById('c-wiretype').value;
@@ -1912,7 +1912,7 @@ async function autoDeductMetal(entry){
   const metalType=entry.metalType.toLowerCase().replace(' ','_').replace('-','_');
   const strandDia=parseFloat(entry.strandDia)||0;
   // Calculate theory metal consumed
-  const km=entry.metalType.includes('Aluminium')?2.70:entry.metalType.includes('CCS Non')?6.16:entry.metalType.includes('CCS Mag')?4.50:7.03;
+  const km=entry.metalType.includes('Aluminium')?2.12:entry.metalType.includes('CCS Non')?6.28:entry.metalType.includes('CCS Mag')?6.28:7.02;
   const strands=parseFloat(entry.strands)||7;
   const metalWtPerBundle=strands*strandDia*strandDia*km*entry.bundleLen;
   const totalMetalKg=(metalWtPerBundle*entry.bundles)/1000;
